@@ -33,9 +33,70 @@ set spell
 " Set the highlighting for mispelled words
 hi SpellBad cterm=underline,bold ctermfg=red
 
+set spellfile+=projectspellfile.utf-8.add
 
+" Go back to last misspelled word and pick first suggestion.
+inoremap <C-L> <C-G>u<Esc>[s1z=`]a<C-G>u
+
+" Select last misspelled word (typing will edit).
+nnoremap <C-K> <Esc>[sve<C-G>
+inoremap <C-K> <Esc>[sve<C-G>
+snoremap <C-K> <Esc>b[sviw<C-G>
+
+"-----------------------------------
 
 "
+"-----------------------------------------------
+" Key Maps
+"----------------------------------------------
+
+" put \begin{} \end{} tags tags around the current word
+noremap  <C-B>      YpkI\begin{<ESC>A}<ESC>jI\end{<ESC>A}<esc>kA
+noremap! <C-B> <ESC>YpkI\begin{<ESC>A}<ESC>jI\end{<ESC>A}<esc>kA
+
+" Same as above
+map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
+map lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
+
+" Allow better movement across lines
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
+
+noremap <Down> gj
+noremap <Up> gk
+
+
+"---------------------------------------------
+" Autocompletes
+"---------------------------------------------
+
+" Math mode autocomplete
+inoremap $	$$<Left>
+inoremap $<CR>	$<CR>$<Esc>O
+inoremap $$	$
+
+" Call the CR() function
+inoremap <expr><buffer> <CR> CR()
+
+"----------------------------------------------
+" Functions
+"---------------------------------------------
+
+" What to do when we hit enter
+function! CR()
+	" See if we are in a list environment, and add the \item tag if so
+	if searchpair('\\begin{itemize}', '', '\\end{itemize}', '')
+		return "\r\\item"
+	endif
+	return "\r"
+endfunction
+
+
+
+
+"---------------------------------------------------------
 " Load the python modules
 python3 << EOF
 

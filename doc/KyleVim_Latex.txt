@@ -41,17 +41,47 @@ Author and Description.
 
 This plugin also enables some nice formatting settings for '.tex files,
 as well as spell-checking.  Mispelled words will be highlighted in red.
+For quick fix mappings, see |KyleVimLatexMappings|.
 
+`$` math mode environments will be autocompleted with the closing `$`,
+double-tap the `$` key to stop the autocompletion.
 
+When inside an itemize environment, the `\item` tag will be automatically
+entered on the next line.
+
+You can use the <F2> key to compile the current latex project, see
+|KyleVimMappings| for more details.
 
 ====================================================================
 Section 2: Mappings                            *KyleVimLatexMappings*
 
+<C-B>	Use control-b when the cursor is on a word to insert beginning
+	and end tags for that word.  For example
+	
+	Type:
+		`itemize`
+	Press control-b with the cursor on `itemize` and the result will be
+	
+	`\begin{itemize}`
+		`curosr is here`
+	`\end{itemize}`
+
+<F2> 	Compile the current latex project.  This requires `pdflatex` to be
+	installed.  If there is a `main.tex` file in the current folder,
+	that file will be used as the main compilation file, otherwise
+	the current file will be compiled on its own.  This will
+	perform the proper bibtex compilation if necessary, and open
+	the resulting PDF in your defaul PDF reader.
+
+<C-L> 	Auto fix the last spelling mistake with the first suggestion
+
+<C-K>	Place the cursor on the last mispelled word.  Typing will replace
+	it.	 	
 ====================================================================
 Section 3: Configuration		   *KyleVimLatexConfiguraion*
 
 
-
+Currently no configuration is required or available.
 
 ====================================================================
 Section 4: License                              *KyleVimLatexLicense*
@@ -93,6 +123,9 @@ Section 7: Changelog                          *KyleVimLatexChangelog*
 	- Special highlighting for math zones
 	- Spell checking
 	- Formatting 
+	- Automatically insert `\item` tags in `itemize` environments
+	- F2 to compile the project
+	- Quick spell fixes
 
 ====================================================================
 Section 8: Credits                              *KyleVimLatexCredits*
