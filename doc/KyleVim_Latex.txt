@@ -3,17 +3,41 @@
 ====================================================================
 CONTENTS                                       *KyleVimLatexContents*
 
-    1. Usage ................ |KyleVimLatexUsage|
-    2. Mappings ............. |KyleVimLatexMappings|
-    3. Configuration ........ |KyleVimLatexConfiguration|
-    4. License .............. |KyleVimLatexLicense|
-    5. Bugs ................. |KyleVimLatexBugs|
-    6. Contributing ......... |KyleVimLatexContributing|
-    7. Changelog ............ |KyleVimLatexChangelog|
-    8. Credits .............. |KyleVimLatexCredits|
+	1. Usage ................ |KyleVimLatexUsage|
+    		1.1 Default Beh . |KyleVimLatexDefault|
+	2. Mappings ............. |KyleVimLatexMappings|
+   	3. Configuration ........ |KyleVimLatexConfiguration|
+   	4. License .............. |KyleVimLatexLicense|
+    	5. Bugs ................. |KyleVimLatexBugs|
+    	6. Contributing ......... |KyleVimLatexContributing|
+    	7. Changelog ............ |KyleVimLatexChangelog|
+    	8. Credits .............. |KyleVimLatexCredits|
 
 ====================================================================
 Section 1: Usage                                  *KyleVimLatexUsage*
+
+--------------------------------------------------------------------
+1.1: Default Behaviour				*KyleVimLatexDefault*
+
+KyleVimLatex contains some automatic settings for easy editing of 
+LATEX files.
+  
+New LATEX files created with vim will automatically have a file header
+inserted at the top of the file.  This header looks like this:
+
+%File Name: file.txt (auto populated)
+%
+%Authors: {% Authors %}
+%
+%Date: The current date (auto populated)
+%
+%Description: {% Description %}
+
+
+You can replace the relevant details as you need.  If you have
+KyleVim installed (highly recommended) then you can use the
+quick inserts functionality to easily replace the file header
+Author and Description.
 
 
 ====================================================================
