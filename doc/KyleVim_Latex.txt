@@ -39,6 +39,10 @@ KyleVim installed (highly recommended) then you can use the
 quick inserts functionality to easily replace the file header
 Author and Description.
 
+This plugin also enables some nice formatting settings for '.tex files,
+as well as spell-checking.  Mispelled words will be highlighted in red.
+
+
 
 ====================================================================
 Section 2: Mappings                            *KyleVimLatexMappings*
@@ -87,7 +91,9 @@ Section 7: Changelog                          *KyleVimLatexChangelog*
 0.1.0
 	- Automatic File Headers
 	- Special highlighting for math zones
-	-	
+	- Spell checking
+	- Formatting 
+
 ====================================================================
 Section 8: Credits                              *KyleVimLatexCredits*
 
