@@ -61,7 +61,9 @@ Thanks!
 Section 7: Changelog                          *KyleVimLatexChangelog*
 
 0.1.0
-	-
+	- Automatic File Headers
+	- Special highlighting for math zones
+	-	
 ====================================================================
 Section 8: Credits                              *KyleVimLatexCredits*
 
