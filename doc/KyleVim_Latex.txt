@@ -1,0 +1,69 @@
+*KyleVimLatex.txt* Handy vim functionality for everyday use
+
+====================================================================
+CONTENTS                                       *KyleVimLatexContents*
+
+    1. Usage ................ |KyleVimLatexUsage|
+    2. Mappings ............. |KyleVimLatexMappings|
+    3. Configuration ........ |KyleVimLatexConfiguration|
+    4. License .............. |KyleVimLatexLicense|
+    5. Bugs ................. |KyleVimLatexBugs|
+    6. Contributing ......... |KyleVimLatexContributing|
+    7. Changelog ............ |KyleVimLatexChangelog|
+    8. Credits .............. |KyleVimLatexCredits|
+
+====================================================================
+Section 1: Usage                                  *KyleVimLatexUsage*
+
+
+====================================================================
+Section 2: Mappings                            *KyleVimLatexMappings*
+
+====================================================================
+Section 3: Configuration		   *KyleVimLatexConfiguraion*
+
+
+
+
+====================================================================
+Section 4: License                              *KyleVimLatexLicense*
+
+KyleVimLatex is available under the MIT license.  More information is 
+available at: https://choosealicense.com/licenses/mit/
+
+====================================================================
+Section 5: Bugs                                    *KyleVimLatexBugs*
+
+I am currently not aware of any bugs, but I'm sure there are a few!
+
+If you find any issues, please report them using the 'Issues' tab at
+the main repository, or click this link:
+https://github.com/KyleS22/KyleVim_Latex/issues
+
+A good bug report is as specific and descriptive as possible.  
+Please include as many details about your setup as possible.
+
+Thanks!
+
+====================================================================
+Section 6: Contributing			   *KyleVimLatexContributing*
+
+The main repository can be found at 
+https://github.com/KyleS22/KyleVim_Latex
+
+If you would like to make a contribution, please create a new branch
+for your feature and create a pull request when ready.
+
+Thanks!
+
+
+====================================================================
+Section 7: Changelog                          *KyleVimLatexChangelog*
+
+0.1.0
+	-
+====================================================================
+Section 8: Credits                              *KyleVimLatexCredits*
+
+
+Written and maintained by Kyle Seidenthal
