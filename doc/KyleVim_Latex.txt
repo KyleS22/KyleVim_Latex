@@ -1,0 +1,139 @@
+*KyleVimLatex.txt* Handy vim functionality for everyday use
+
+====================================================================
+CONTENTS                                       *KyleVimLatexContents*
+
+	1. Usage ................ |KyleVimLatexUsage|
+    		1.1 Default Beh . |KyleVimLatexDefault|
+	2. Mappings ............. |KyleVimLatexMappings|
+   	3. Configuration ........ |KyleVimLatexConfiguration|
+   	4. License .............. |KyleVimLatexLicense|
+    	5. Bugs ................. |KyleVimLatexBugs|
+    	6. Contributing ......... |KyleVimLatexContributing|
+    	7. Changelog ............ |KyleVimLatexChangelog|
+    	8. Credits .............. |KyleVimLatexCredits|
+
+====================================================================
+Section 1: Usage                                  *KyleVimLatexUsage*
+
+--------------------------------------------------------------------
+1.1: Default Behaviour				*KyleVimLatexDefault*
+
+KyleVimLatex contains some automatic settings for easy editing of 
+LATEX files.
+  
+New LATEX files created with vim will automatically have a file header
+inserted at the top of the file.  This header looks like this:
+
+%File Name: file.txt (auto populated)
+%
+%Authors: {% Authors %}
+%
+%Date: The current date (auto populated)
+%
+%Description: {% Description %}
+
+
+You can replace the relevant details as you need.  If you have
+KyleVim installed (highly recommended) then you can use the
+quick inserts functionality to easily replace the file header
+Author and Description.
+
+This plugin also enables some nice formatting settings for '.tex files,
+as well as spell-checking.  Mispelled words will be highlighted in red.
+For quick fix mappings, see |KyleVimLatexMappings|.
+
+`$` math mode environments will be autocompleted with the closing `$`,
+double-tap the `$` key to stop the autocompletion.
+
+When inside an itemize environment, the `\item` tag will be automatically
+entered on the next line.
+
+You can use the <F2> key to compile the current latex project, see
+|KyleVimMappings| for more details.
+
+When you type the `\cite{}` command the autocomplete menu (`ctrl_N`) will
+be populated with only the tags from the `refs.bib` file allowing you to easily
+select the correct bibtex tag.
+
+====================================================================
+Section 2: Mappings                            *KyleVimLatexMappings*
+
+<C-B>	Use control-b when the cursor is on a word to insert beginning
+	and end tags for that word.  For example
+	
+	Type:
+		`itemize`
+	Press control-b with the cursor on `itemize` and the result will be
+	
+	`\begin{itemize}`
+		`curosr is here`
+	`\end{itemize}`
+
+<F2> 	Compile the current latex project.  This requires `pdflatex` to be
+	installed.  If there is a `main.tex` file in the current folder,
+	that file will be used as the main compilation file, otherwise
+	the current file will be compiled on its own.  This will
+	perform the proper bibtex compilation if necessary, and open
+	the resulting PDF in your defaul PDF reader.
+
+<C-L> 	Auto fix the last spelling mistake with the first suggestion
+
+<C-K>	Place the cursor on the last mispelled word.  Typing will replace
+	it.	 	
+====================================================================
+Section 3: Configuration		   *KyleVimLatexConfiguraion*
+
+
+Currently no configuration is required or available.
+
+====================================================================
+Section 4: License                              *KyleVimLatexLicense*
+
+KyleVimLatex is available under the MIT license.  More information is 
+available at: https://choosealicense.com/licenses/mit/
+
+====================================================================
+Section 5: Bugs                                    *KyleVimLatexBugs*
+
+I am currently not aware of any bugs, but I'm sure there are a few!
+
+If you find any issues, please report them using the 'Issues' tab at
+the main repository, or click this link:
+https://github.com/KyleS22/KyleVim_Latex/issues
+
+A good bug report is as specific and descriptive as possible.  
+Please include as many details about your setup as possible.
+
+Thanks!
+
+====================================================================
+Section 6: Contributing			   *KyleVimLatexContributing*
+
+The main repository can be found at 
+https://github.com/KyleS22/KyleVim_Latex
+
+If you would like to make a contribution, please create a new branch
+for your feature and create a pull request when ready.
+
+Thanks!
+
+
+====================================================================
+Section 7: Changelog                          *KyleVimLatexChangelog*
+
+0.1.0
+    - Bibtex Autocomplete
+	- Automatic File Headers
+	- Special highlighting for math zones
+	- Spell checking
+	- Formatting 
+	- Automatically insert `\item` tags in `itemize` environments
+	- F2 to compile the project
+	- Quick spell fixes
+
+====================================================================
+Section 8: Credits                              *KyleVimLatexCredits*
+
+
+Written and maintained by Kyle Seidenthal
