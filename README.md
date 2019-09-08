@@ -12,10 +12,13 @@ Press F2 to compile the current project and open the PDF in your PDF reader, wit
 ## Begin and End Generation
 Easily create a `\begin{} \end{}` environment using `<C-B>`
 
-## Autonatic List items
+## Automatic List items
 When in an `itemize` environment, the `\item` tag will be automatically inserted on each line
 
-
+## Autocomplete bibtex Tags
+When using a `refs.bib` file, the tags will be used exclusively as the options
+in the autocomplete menu (`<ctrl-N>`) when you type the `\cite{}` command in
+latex.
 
 # Installation
 This plugin can be installed using [Vundle](https://github.com/VundleVim/Vundle.vim).  Simply add the following line to your vimrc

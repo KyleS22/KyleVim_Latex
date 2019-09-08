@@ -80,6 +80,8 @@ inoremap $$	$
 " Call the CR() function
 inoremap <expr><buffer> <CR> CR()
 
+inoremap <expr> \cite SwitchRefsCompletion(1)
+
 "----------------------------------------------
 " Functions
 "---------------------------------------------
@@ -90,11 +92,58 @@ function! CR()
 	if searchpair('\\begin{itemize}', '', '\\end{itemize}', '')
 		return "\r\\item"
 	endif
-	return "\r"
+
+    call SwitchRefsCompletion(0)
+
+    return "\r"
 endfunction
 
 
 
+" Enable autocomplete of bib tags when using the \cite{} command
+function! EnableBibtexAutocomplete()
+	python3 sys.argv = [vim.eval('getcwd()')]
+	python3 bibtex_autocomplete.autocomplete_bibtex(sys.argv[0])
+endfunction
+
+" Remove the bib keys file
+function! CleanUpBibtexTagsFile()
+    python3 bibtex_autocomplete.clean_up_autocomplete_file()
+endfunction
+
+" Switch the autocomplete file to be the bib keys file
+function SwitchRefsCompletion(enabled)
+        
+        if CheckBibRefsExists()
+                
+                if a:enabled
+                        exe 'set cpt=k.kyle_vim_latex_bibtex_file.txt'
+                        return "\\cite"
+                else
+                        exe 'set cpt=.,w,b,u,t,i'
+                        return ""
+                endif
+                
+        endif
+
+        return ""
+
+endfunction
+
+" See if a refs.bib file exists in the project
+function! CheckBibRefsExists()
+        if filereadable("refs.bib")
+                return 1
+        else
+                return 0
+        endif
+endfunction
+
+"------------------------------------------------------------
+" Autocommands
+" -----------------------------------------------------------
+autocmd VimEnter *.tex call EnableBibtexAutocomplete()
+autocmd VimLeave *.tex call CleanUpBibtexTagsFile()
 
 "---------------------------------------------------------
 " Load the python modules
@@ -104,10 +153,12 @@ import sys
 from os.path import normpath, join
 import vim
 
+
 plugin_root_dir = vim.eval('s:plugin_root_dir')
 python_root_dir = normpath(join(plugin_root_dir, '../..', 'python'))
 sys.path.insert(0, python_root_dir)
 
+import bibtex_autocomplete
 EOF
 
 

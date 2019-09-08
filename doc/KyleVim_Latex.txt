@@ -52,6 +52,10 @@ entered on the next line.
 You can use the <F2> key to compile the current latex project, see
 |KyleVimMappings| for more details.
 
+When you type the `\cite{}` command the autocomplete menu (`ctrl_N`) will
+be populated with only the tags from the `refs.bib` file allowing you to easily
+select the correct bibtex tag.
+
 ====================================================================
 Section 2: Mappings                            *KyleVimLatexMappings*
 
@@ -119,6 +123,7 @@ Thanks!
 Section 7: Changelog                          *KyleVimLatexChangelog*
 
 0.1.0
+    - Bibtex Autocomplete
 	- Automatic File Headers
 	- Special highlighting for math zones
 	- Spell checking
