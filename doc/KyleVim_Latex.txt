@@ -123,7 +123,7 @@ Thanks!
 Section 7: Changelog                          *KyleVimLatexChangelog*
 
 0.1.1
-	- Fixed bug when creating new `.tex` files
+	- Fixed a bug that occurs when creating new `.tex` files.
 	
 0.1.0
     - Bibtex Autocomplete
