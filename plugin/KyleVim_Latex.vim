@@ -17,7 +17,7 @@ let g:tex_flavor = "latex"
 
 " Tex
 autocmd bufnewfile *.tex so ~/.vim/header_templates/tex_header.txt"
-autocmd bufnewfile *.tex exe "1," . 6 . "g/File Name:.*/s//File Name: " .expand("%")
+autocmd bufnewfile *.tex exe "1," . 6 . "g/File Name:.*/s//File Name: " .expand("%:t")
 autocmd bufnewfile *.tex exe "1," . 6 . "g/Date:.*/s//Date: " .strftime("%d-%m-%Y")
 
 " Syntax highlighting for math zones
