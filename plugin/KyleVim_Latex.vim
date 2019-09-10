@@ -1,6 +1,6 @@
 " Make sure this plugin is runnable
 
-let g:kyle_vim_latex_version = "0.1.0"
+let g:kyle_vim_latex_version = "0.1.1"
 
 if !has("python3")
 	echo "Vim must be compiled with +python3 to use KyleVim"
@@ -17,7 +17,7 @@ let g:tex_flavor = "latex"
 
 " Tex
 autocmd bufnewfile *.tex so ~/.vim/header_templates/tex_header.txt"
-autocmd bufnewfile *.tex exe "1," . 6 . "g/File Name:.*/s//File Name: " .expand("%")
+autocmd bufnewfile *.tex exe "1," . 6 . "g/File Name:.*/s//File Name: " .expand("%:t")
 autocmd bufnewfile *.tex exe "1," . 6 . "g/Date:.*/s//Date: " .strftime("%d-%m-%Y")
 
 " Syntax highlighting for math zones
