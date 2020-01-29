@@ -84,8 +84,13 @@ Section 2: Mappings                            *KyleVimLatexMappings*
 ====================================================================
 Section 3: Configuration		   *KyleVimLatexConfiguraion*
 
+To set the name of the bibtex file that you use, set the following in your 
+.vimrc:
 
-Currently no configuration is required or available.
+	`let g:KyleVimLatexBibtexFile = "name.bib"`
+
+
+The default name is 'refs.bib'
 
 ====================================================================
 Section 4: License                              *KyleVimLatexLicense*
