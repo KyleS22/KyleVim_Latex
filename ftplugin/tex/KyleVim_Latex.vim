@@ -43,6 +43,10 @@ nnoremap <C-K> <Esc>[sve<C-G>
 inoremap <C-K> <Esc>[sve<C-G>
 snoremap <C-K> <Esc>b[sviw<C-G>
 
+if !exists('g:KyleVimLatexBibtexFile')
+	let g:KyleVimLatexBibtexFile = "refs.bib"
+endif
+
 "-----------------------------------
 
 "
@@ -132,7 +136,7 @@ endfunction
 
 " See if a refs.bib file exists in the project
 function! CheckBibRefsExists()
-        if filereadable("refs.bib")
+        if filereadable(g:KyleVimLatexBibtexFile)
                 return 1
         else
                 return 0

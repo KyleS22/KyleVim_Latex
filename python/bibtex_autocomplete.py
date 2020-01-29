@@ -11,7 +11,7 @@ Description: A python module that allows autocompletion of bitex entry tags
 
 import os
 
-REFS_NAME = 'refs.bib'
+REFS_NAME = vim.eval("g:KyleVimLatexBibtexFile")#'refs.bib'
 TAGS_FILE_NAME = '.kyle_vim_latex_bibtex_file.txt'
 
 
