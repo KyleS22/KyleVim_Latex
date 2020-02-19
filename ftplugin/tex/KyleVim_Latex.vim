@@ -148,6 +148,7 @@ endfunction
 " -----------------------------------------------------------
 autocmd VimEnter *.tex call EnableBibtexAutocomplete()
 autocmd VimLeave *.tex call CleanUpBibtexTagsFile()
+autocmd BufNewFile,BufRead *.tex :syntax spell toplevel
 
 "---------------------------------------------------------
 " Load the python modules
